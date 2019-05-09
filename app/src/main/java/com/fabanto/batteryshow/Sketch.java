@@ -6,23 +6,30 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.BatteryManager;
 import android.util.Log;
-import android.widget.TextView;
 
 import processing.core.PApplet;
 
 class Sketch extends PApplet {
 
+    private int level;
+
+
+
+    @Override
+    public void settings() {
+        super.settings();
+        fullScreen();
+    }
+
+    @Override
+    public void setup() {
+        background(51);
+    }
+
     public void draw() {
+    }
 
-        BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
-                Log.d("livello", String.valueOf(level) + "0");
-            }
-        };
-        //battery = (TextView) this.findViewById(R.id.text);
-        getActivity().registerReceiver(mBatInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-
+    public void setBatteryLevel(int level){
+        this.level=level;
     }
 }
