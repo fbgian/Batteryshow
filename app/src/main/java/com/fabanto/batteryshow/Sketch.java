@@ -38,6 +38,7 @@ class Sketch extends PApplet {
 
     public void draw() {
         background(0);
+        cerchio();
     }
 
     public void setBatteryLevel(int level) {
