@@ -20,6 +20,8 @@ class Sketch extends PApplet {
     }
 
     public void draw() {
+        stroke(255);
+        text(level+"%",width/2.0f,height/2.0f);
     }
 
     public void setBatteryLevel(int level){
