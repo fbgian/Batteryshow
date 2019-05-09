@@ -17,11 +17,13 @@ public class MainActivity extends AppCompatActivity {
 
     private Sketch sketch;
 
+
     private BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
             Log.d("livello", level + "%");
+
             sketch.setBatteryLevel(level);
         }
     };
