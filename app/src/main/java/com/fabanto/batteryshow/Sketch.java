@@ -35,6 +35,7 @@ class Sketch extends PApplet {
 
     private void cerchio(){
         pushStyle();
+        pushMatrix();
         stroke(255);
         fill(255);
         translate(width / 2.0f, height / 2.0f);
@@ -45,6 +46,7 @@ class Sketch extends PApplet {
         float theta = level * TWO_PI / 100;
         ellipse(dist * sin(theta), -dist * cos(theta), rad, rad);
         popStyle();
+        popMatrix();
     }
 
     public void draw() {
@@ -57,7 +59,7 @@ class Sketch extends PApplet {
     public void printLevel() {
         //stroke(255);
         textSize(192);
-        textAlign(CENTER);
+        textAlign(CENTER, CENTER);
         text(level + "%", displayWidth / 2.0f, displayHeight / 2.0f);
     }
 
