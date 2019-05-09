@@ -2,8 +2,11 @@ package com.fabanto.batteryshow;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView batperc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
