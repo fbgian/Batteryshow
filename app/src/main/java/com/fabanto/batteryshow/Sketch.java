@@ -22,8 +22,8 @@ class Sketch extends PApplet {
         rad = dist / 6;
     }
 
-    public void draw() {
-        background(0);
+    private void cerchio(){
+        pushStyle();
         stroke(255);
         fill(255);
         translate(width / 2.0f, height / 2.0f);
@@ -33,7 +33,11 @@ class Sketch extends PApplet {
         noStroke();
         float theta = level * TWO_PI / 100;
         ellipse(dist * sin(theta), -dist * cos(theta), rad, rad);
+        popStyle();
+    }
 
+    public void draw() {
+        background(0);
     }
 
     public void setBatteryLevel(int level) {
