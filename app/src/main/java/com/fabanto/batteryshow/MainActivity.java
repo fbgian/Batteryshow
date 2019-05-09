@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
-            Log.d("livello", level + "0");
+            Log.d("livello", level + "%");
+            sketch.setBatteryLevel(level);
         }
     };
 

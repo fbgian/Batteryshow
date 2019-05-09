@@ -1,12 +1,5 @@
 package com.fabanto.batteryshow;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.BatteryManager;
-import android.util.Log;
-
 import processing.core.PApplet;
 
 class Sketch extends PApplet {
