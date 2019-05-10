@@ -11,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import processing.android.PFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +31,13 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    private void getData() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy '\n' HH:mm");
+        String currentData = sdf.format(new Date());
+        sketch.setData(currentData);
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         registerReceiver(mBatInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+
 
         sketch = new Sketch();
         PFragment fragment = new PFragment(sketch);

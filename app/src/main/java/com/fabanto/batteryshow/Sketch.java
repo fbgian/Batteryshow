@@ -18,6 +18,7 @@ class Sketch extends PApplet {
     SoundPool sp = new SoundPool.Builder().build();
     int soundID;
     boolean flag = false;
+    String data;
 
     @Override
     public void settings() {
@@ -61,6 +62,12 @@ class Sketch extends PApplet {
         textSize(192);
         textAlign(CENTER, CENTER);
         text(level + "%", displayWidth / 2.0f, displayHeight / 2.0f);
+    }
+
+    public void setData(String data) {
+        textSize(175);
+        textAlign(CENTER, CENTER);
+        text(data, displayWidth / 2.0f, displayHeight / 2.0f-100);
     }
 
     public void setBatteryLevel(int level) {
